@@ -3,8 +3,8 @@ package br.com.fiap.challengesprint.controller;
 import br.com.fiap.challengesprint.mapper.CategoriaMapper;
 import br.com.fiap.challengesprint.repository.CategoriaRepository;
 import br.com.fiap.challengesprint.response.CategoriaResponse;
-import br.com.fiap.challengesprint.response.ProdutoResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Api(value = "Endpoint de categorias")
 @RestController
 @RequestMapping("/api/categorias")
 public class CategoriaController {
@@ -26,6 +27,7 @@ public class CategoriaController {
         this.categoriaMapper = categoriaMapper;
     }
 
+    @ApiOperation(value = "Listagem de categorias cadastradas")
     @GetMapping
     public ResponseEntity<List<CategoriaResponse>> listAll() {
         var categorias = repository.findAll();

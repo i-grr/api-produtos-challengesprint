@@ -24,6 +24,9 @@ public class ProdutoRequest {
     @Max(999)
     private Integer quantidade;
 
+    @Deprecated
+    public ProdutoRequest() {}
+
     public ProdutoRequest(String nome, String categoria, BigDecimal preco, Integer quantidade) {
         this.nome = nome;
         this.categoria = categoria;
