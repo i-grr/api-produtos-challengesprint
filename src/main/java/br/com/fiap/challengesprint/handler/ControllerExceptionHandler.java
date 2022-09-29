@@ -23,7 +23,6 @@ public class ControllerExceptionHandler {
 
     private final MessageSource messageSource;
 
-    @Autowired
     public ControllerExceptionHandler(MessageSource messageSource) {
         this.messageSource = messageSource;
     }
@@ -38,7 +37,7 @@ public class ControllerExceptionHandler {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(ProdutoNotFoundException.class)
-    public Map<String, String> handlePaisNaoEncontradoError(BusinessException e) {
+    public Map<String, String> handleProdutoNaoEncontradoError(BusinessException e) {
         Map<String, String> response = new HashMap<>();
         response.put("message:", e.getMessage());
         return response;
