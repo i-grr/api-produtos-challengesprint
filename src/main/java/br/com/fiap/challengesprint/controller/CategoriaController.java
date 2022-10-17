@@ -6,6 +6,7 @@ import br.com.fiap.challengesprint.response.CategoriaResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 @Api(value = "Endpoint de categorias")
 @RestController
 @RequestMapping("/api/categorias")
+@CrossOrigin(origins="*")
 public class CategoriaController {
 
     private final CategoriaRepository repository;
